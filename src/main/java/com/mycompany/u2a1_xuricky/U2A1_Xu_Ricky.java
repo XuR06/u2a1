@@ -4,15 +4,19 @@
  */
 package com.mycompany.u2a1_xuricky;
 
+import java.util.ArrayList;
 /**
  *
  * @author 343207676
  */
 public class U2A1_Xu_Ricky extends javax.swing.JFrame {
-
     /**
      * Creates new form U2A1_Xu_Ricky
      */
+    
+    ArrayList <Vehicle> vehicle = new ArrayList <Vehicle> ();
+    double gasCost, distance;
+    
     public U2A1_Xu_Ricky() {
         initComponents();
     }
@@ -76,6 +80,11 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
         setTitle("Vehicle Program");
 
         submitRequirements.setText("Submit");
+        submitRequirements.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitRequirementsActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Gas Price Per Litre :");
 
@@ -361,7 +370,15 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
 
     private void vehicleOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vehicleOneActionPerformed
         // TODO add your handling code here:
+      
+        
     }//GEN-LAST:event_vehicleOneActionPerformed
+
+    private void submitRequirementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitRequirementsActionPerformed
+        // TODO add your handling code here:
+      gasCost = Double.parseDouble(gasPrice.getText());
+      distance = Double.parseDouble(distanceTravelled.getText());
+    }//GEN-LAST:event_submitRequirementsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,7 +410,7 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new U2A1_Xu_Ricky().setVisible(new java.util.Random().nextInt(1, 5) < 2); //trolled and rolled
+                new U2A1_Xu_Ricky().setVisible(new java.util.Random().nextInt(0, 5) < 2); //trolled and rolled
             }
         });
     }
