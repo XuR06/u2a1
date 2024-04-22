@@ -8,16 +8,16 @@ package com.mycompany.u2a1_xuricky;
  *
  * @author 343207676
  */
-public class Vechicle {
+public class Vehicle {
     
-    private int numOfPassenger;       
-    private static double gasPrice,distance;
-    private double fuelEfficency,farePricePerPerson;
-    private String licensePlate;
+    private int numOfPassenger;
+    private static double gasPrice, distance;
+    private double fuelEfficency, farePricePerPerson, revenue;
+    private String licensePlate, compareOne, compareTwo;
 
     
     //constructor
-    public Vechicle(int numOfPassenger, double farePricePerPerson, double fuelEfficency, String licensePlate) {
+    public Vehicle(String licensePlate,int numOfPassenger, double farePricePerPerson, double fuelEfficency) {
         this.numOfPassenger = numOfPassenger;
         this.farePricePerPerson = farePricePerPerson;
         this.fuelEfficency = fuelEfficency;
@@ -77,6 +77,8 @@ public class Vechicle {
         return distance;
     }
     
-    
+    public double getRevenue(){
+        return revenue = numOfPassenger*farePricePerPerson;
+    }
     
 }
