@@ -14,7 +14,7 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
      * Creates new form U2A1_Xu_Ricky
      */
     
-    ArrayList <Vehicle> vehicle = new ArrayList <Vehicle> ();
+    ArrayList <Vehicle> vehicles = new ArrayList <Vehicle> ();
     double gasCost, distance, pricePerPerson, efficency;
     String license;
     int vehicleCount = 0,numOfPassengers;
@@ -225,6 +225,11 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
         jLabel9.setText("Vehicle License Plate:");
 
         submitViewVehicle.setText("Submit");
+        submitViewVehicle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitViewVehicleActionPerformed(evt);
+            }
+        });
 
         outputVehicleInfo.setEditable(false);
         outputVehicleInfo.setColumns(20);
@@ -424,14 +429,26 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
        if (numOfPassengers < 0 || pricePerPerson < 0 || efficency < 0){
            addVehicleOutput.setText("Enter positive values");
            return;
-       }
-       Vehicle vehicle = new Vehicle (license, numOfPassengers, pricePerPerson, efficency);
-       vehicleCount++;
+       } else 
+           addVehicleOutput.setText("Done!");
+           Vehicle vehicle = new Vehicle (license, numOfPassengers, pricePerPerson, efficency);
+           vehicles.add(vehicle);
+           vehicleCount++;
        } catch (Exception e) {
            addVehicleOutput.setText("Invalid inputs. Please check your inputs.");
        }
 // TODO add your handling code here:
     }//GEN-LAST:event_submitAddVehicleActionPerformed
+
+    private void submitViewVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitViewVehicleActionPerformed
+       
+        
+        license = viewVehicleNum.getText();
+        for (int i = 0; i < vehicles.size(); i++){
+            vehicleList.append(vehicles.get(i).toString());
+        }
+        
+    }//GEN-LAST:event_submitViewVehicleActionPerformed
 
     /**
      * @param args the command line arguments
