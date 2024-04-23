@@ -80,5 +80,11 @@ public class Vehicle {
     public double getRevenue(){
         return revenue = numOfPassenger*farePricePerPerson;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" + "numOfPassenger=" + numOfPassenger + ", fuelEfficency=" + fuelEfficency + ", farePricePerPerson=" + farePricePerPerson + ", revenue=" + revenue + ", licensePlate=" + licensePlate + ", compareOne=" + compareOne + ", compareTwo=" + compareTwo + '}';
+    }
+    
     
 }
