@@ -445,7 +445,8 @@ public class U2A1_Xu_Ricky extends javax.swing.JFrame {
         
         license = viewVehicleNum.getText();
         for (int i = 0; i < vehicles.size(); i++){
-            vehicleList.append(vehicles.get(i).toString());
+            vehicleList.append(vehicles.get(i).toString()); 
+            
         }
         
     }//GEN-LAST:event_submitViewVehicleActionPerformed
